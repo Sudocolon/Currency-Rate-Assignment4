@@ -52,6 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\CurrencyRateRetriever.cs" />
     <Compile Include="CurrencyRateView.cs">
       <SubType>Form</SubType>
     </Compile>
