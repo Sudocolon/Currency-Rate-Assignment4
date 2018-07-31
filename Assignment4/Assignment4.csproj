@@ -61,7 +61,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tests\CompareTargetRateTest.cs" />
-    <Compile Include="Tests\CurrencyRateController.cs" />
+    <Compile Include="Classes\CurrencyRateController.cs" />
     <Compile Include="Tests\CurrencyRateControllerTest.cs" />
     <Compile Include="Tests\CurrencyRateRetrieverTest.cs" />
     <Compile Include="Tests\CurrencyRateUpdateTest.cs" />

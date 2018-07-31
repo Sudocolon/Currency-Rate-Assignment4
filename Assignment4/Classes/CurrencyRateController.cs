@@ -11,21 +11,17 @@ namespace Assignment4.Tests
     {
         public static int CurrentTick = 0;
         public static int UpdateRate = 60;
+        static BackgroundWorker Worker = new BackgroundWorker();
         static CurrencyRateController()
         {
-            Thread UpdateThread = new Thread(Update);
-            System.Diagnostics.Debug.WriteLine("Start Thread");
-            UpdateThread.Start();
+            Worker.DoWork += Tick;
+            Worker.RunWorkerAsync("Tick");
         }
-
-        internal static void Update()
+        static void Tick(object sender, DoWorkEventArgs ev)
         {
-            while (true)
-            {
-                Thread.Sleep(TickRateToMiliseconds(60));
-                CurrentTick++;
-                System.Diagnostics.Debug.WriteLine(CurrentTick);
-            }
+            Console.WriteLine("Foo");
+            Thread.Sleep(1000);
+            Worker.RunWorkerAsync("Tick");
         }
         internal static int TickRateToMiliseconds(int rate)
         {
