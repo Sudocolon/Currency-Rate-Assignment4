@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 
+//reading the XML data
 namespace Assignment4.Classes
 {
     public static class CurrencyRateRetriever
