@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assignment4.Tests;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,7 +15,18 @@ namespace Assignment4
     {
         public CurrencyRateView()
         {
+            Timer timer = new Timer
+            {
+                //Interval is in miliseconds
+                Interval = CurrencyRateController.UpdateRate * 1000
+            };
+            timer.Tick += new EventHandler(Tick);
+            timer.Enabled = true;
             InitializeComponent();
+        }
+        private void Tick(object Sender, EventArgs e)
+        {
+            CurrencyRateController.Tick();
         }
 
         private void CurrencyRateView_Load(object sender, EventArgs e)

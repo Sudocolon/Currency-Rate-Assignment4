@@ -1,32 +1,30 @@
-﻿using System;
+﻿using Assignment4.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading;
+using static Assignment4.Classes.XMLParser;
 
 namespace Assignment4.Tests
 {
     public static class CurrencyRateController
     {
+        readonly static string url = "http://rates.fxcm.com/RatesXML";
         public static int CurrentTick = 0;
-        public static int UpdateRate = 60;
-        static BackgroundWorker Worker = new BackgroundWorker();
+        public static int UpdateRate = 1;
+        public static Dictionary<string, Currency> CurrencyData = new Dictionary<string, Currency>();
         static CurrencyRateController()
         {
-            Worker.DoWork += Tick;
-            Worker.RunWorkerAsync("Tick");
+
         }
-        static void Tick(object sender, DoWorkEventArgs ev)
+        public static void Tick()
         {
-            Console.WriteLine("Foo");
-            Thread.Sleep(1000);
-            Worker.RunWorkerAsync("Tick");
-        }
-        internal static int TickRateToMiliseconds(int rate)
-        {
-            float conversionOutput = 1F / rate * 1000;
-            return (int)conversionOutput;
+            CurrentTick++;
+            CurrencyData = XMLParser.ParseCurrencyXML(CurrencyRateRetriever.RetrieveXml(url));
+            //Console.WriteLine("Tick:" + CurrentTick);
+            //Console.WriteLine("Count:" + CurrencyData.Count);
         }
     }
 }

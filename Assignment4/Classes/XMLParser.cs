@@ -24,13 +24,15 @@ namespace Assignment4.Classes
             XmlNodeList xmlNodes = xml.DocumentElement.SelectNodes("/Rates/Rate");
             foreach (XmlNode xmlNode in xmlNodes)
             {
-                Currency currency = new Currency();
-                currency.Bid = float.Parse(xmlNode.SelectSingleNode("Bid").InnerText);
-                currency.Ask = float.Parse(xmlNode.SelectSingleNode("Ask").InnerText);
-                currency.High = float.Parse(xmlNode.SelectSingleNode("High").InnerText);
-                currency.Low = float.Parse(xmlNode.SelectSingleNode("Low").InnerText);
-                currency.Direction = float.Parse(xmlNode.SelectSingleNode("Direction").InnerText);
-                currency.Last = xmlNode.SelectSingleNode("Last").InnerText;
+                Currency currency = new Currency
+                {
+                    Bid = float.Parse(xmlNode.SelectSingleNode("Bid").InnerText),
+                    Ask = float.Parse(xmlNode.SelectSingleNode("Ask").InnerText),
+                    High = float.Parse(xmlNode.SelectSingleNode("High").InnerText),
+                    Low = float.Parse(xmlNode.SelectSingleNode("Low").InnerText),
+                    Direction = float.Parse(xmlNode.SelectSingleNode("Direction").InnerText),
+                    Last = xmlNode.SelectSingleNode("Last").InnerText
+                };
                 parseData.Add(xmlNode.Attributes["Symbol"].Value, currency);
             }
             return parseData;
