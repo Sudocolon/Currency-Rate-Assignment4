@@ -17,7 +17,7 @@ namespace Assignment4.Tests
         static CurrencyRateController()
         {
             CurrencyRateUpdate.SetCurrencyRateData();
-            CompareTargetRate.SetTarget("EURUSD", 1.16154F);
+            //CompareTargetRate.SetTarget("EURUSD", 1.16154F);
         }
         public static void Tick()
         {

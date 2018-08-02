@@ -14,8 +14,11 @@ namespace Assignment4
 {
     public partial class CurrencyRateView : Form
     {
+        List<string> PairNames;
         public CurrencyRateView()
         {
+            CurrencyRateController.Tick();
+            PairNames = new List<string>(CurrencyRateController.CurrencyData.Keys);
             Timer timer = new Timer
             {
                 //Interval is in miliseconds
@@ -24,6 +27,7 @@ namespace Assignment4
             timer.Tick += new EventHandler(Tick);
             timer.Enabled = true;
             InitializeComponent();
+            listBox1.DataSource = PairNames;
         }
         private void Tick(object Sender, EventArgs e)
         {
@@ -31,6 +35,11 @@ namespace Assignment4
         }
 
         private void CurrencyRateView_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
