@@ -9,27 +9,15 @@ namespace Assignment4.Classes
 {
     public static class CurrencyRateRetriever
     {
-        static string Url;
-        static XmlDocument Xml;
         static CurrencyRateRetriever()
         {
-            Xml = new XmlDocument();
+
         }
-        public static void SetUrl(string url)
+        public static XmlDocument RetrieveXml(string url)
         {
-            Url = url;
-        }
-        public static string GetUrl()
-        {
-            return Url;
-        }
-        public static XmlDocument GetXml()
-        {
-            return Xml;
-        }
-        public static void RetrieveXml(string url)
-        {
+            XmlDocument Xml = new XmlDocument();
             Xml.Load(url);
+            return Xml;
         }
     }
 }

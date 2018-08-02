@@ -53,6 +53,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\CurrencyRateRetriever.cs" />
+    <Compile Include="Classes\CurrencyRateUpdate.cs" />
+    <Compile Include="Classes\XMLParser.cs" />
     <Compile Include="CurrencyRateView.cs">
       <SubType>Form</SubType>
     </Compile>
