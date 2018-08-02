@@ -34,6 +34,11 @@ namespace Assignment4
             CurrencyRateController.Tick();
             label1.Text = CompareTargetRate.PairWatching.Bid.ToString();
         }
+        public static void TargetNotification()
+        {
+            MessageBox.Show("Reached Target");
+            Application.Exit();
+        }
 
         private void CurrencyRateView_Load(object sender, EventArgs e)
         {

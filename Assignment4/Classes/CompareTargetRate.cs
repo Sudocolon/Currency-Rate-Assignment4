@@ -47,7 +47,7 @@ namespace Assignment4.Classes
                 {
                     if (TargetValue <= PairWatching.Bid)
                     {
-                        MessageBox.Show("Reached Target");
+                        CurrencyRateView.TargetNotification();
                         CheckingTarget = false;
                         //Console.WriteLine("checkingtarget3A:" + CheckingTarget);
                     }
@@ -56,7 +56,7 @@ namespace Assignment4.Classes
                 {
                     if (TargetValue >= PairWatching.Bid)
                     {
-                        MessageBox.Show("Reached Target");
+                        CurrencyRateView.TargetNotification();
                         CheckingTarget = false;
                         //Console.WriteLine("checkingtarget3B:" + CheckingTarget);
                     }

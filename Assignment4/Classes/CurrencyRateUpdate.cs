@@ -11,15 +11,15 @@ namespace Assignment4.Classes
     public static class CurrencyRateUpdate
     {
         readonly static string url = "http://rates.fxcm.com/RatesXML";
-        public static Dictionary<string, Currency> pairData = new Dictionary<string, Currency>();
+        public static Dictionary<string, Currency> PairData = new Dictionary<string, Currency>();
         static CurrencyRateUpdate()
         {
 
         }
         public static void SetCurrencyRateData()
         {
-            pairData = XMLParser.ParseCurrencyXML(CurrencyRateRetriever.RetrieveXml(url));
-            CurrencyRateController.CurrencyData = pairData;
+            PairData = XMLParser.ParseCurrencyXML(CurrencyRateRetriever.RetrieveXml(url));
+            CurrencyRateController.CurrencyData = PairData;
         }
     }
 }

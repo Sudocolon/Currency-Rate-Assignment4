@@ -20,7 +20,7 @@ namespace Assignment4.Tests
         {
             CurrencyRateUpdate.SetCurrencyRateData();
             int pairCount = 0;
-            pairCount = CurrencyRateUpdate.pairData.Count;
+            pairCount = CurrencyRateUpdate.PairData.Count;
             Assert.AreEqual(61, pairCount);
         }
         [Test]
