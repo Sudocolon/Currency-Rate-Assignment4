@@ -32,6 +32,7 @@ namespace Assignment4
         private void Tick(object Sender, EventArgs e)
         {
             CurrencyRateController.Tick();
+            label1.Text = CompareTargetRate.PairWatching.Bid.ToString();
         }
 
         private void CurrencyRateView_Load(object sender, EventArgs e)
@@ -40,6 +41,18 @@ namespace Assignment4
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            string targetName = listBox1.GetItemText(listBox1.SelectedItem);
+            float targetValue = (float)Convert.ToDouble(textBox1.Text);
+            CompareTargetRate.SetTarget(targetName, targetValue);
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }

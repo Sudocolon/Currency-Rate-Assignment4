@@ -11,7 +11,7 @@ namespace Assignment4.Classes
 {
     public static class CompareTargetRate
     {
-        static Currency PairWatching;
+        public static Currency PairWatching;
         public static string TargetPairName;
         static bool TargetIsAbove;
         public static float TargetValue;
