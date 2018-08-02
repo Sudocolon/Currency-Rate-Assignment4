@@ -52,6 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\CompareTargetRate.cs" />
     <Compile Include="Classes\CurrencyRateController.cs" />
     <Compile Include="Classes\CurrencyRateRetriever.cs" />
     <Compile Include="Classes\CurrencyRateUpdate.cs" />

@@ -14,5 +14,10 @@ namespace Assignment4.Tests
         {
             Assert.AreEqual(true, true);
         }
+        [Test]
+        public void GetTargetPairs()
+        {
+
+        }
     }
 }
